@@ -1,0 +1,79 @@
+#����Ӧ����
+#server:
+#  servlet:
+#    context-path: /Learning
+#  port: 80
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+
+
+
+  datasource:
+    #serverTimezone=GMT%2B8时区问题 东八区
+    url: jdbc:mysql:///mydb?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  thymeleaf:
+    #关闭页面缓存
+    cache: false
+
+
+
+mybatis:
+  #配置映射文件扫描.
+  mapper-locations: classpath:mapper/*.xml
+  #配置别名的扫描
+  type-aliases-package: com.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+
+page:
+  size: 10
+
+
+school:
+  student:
+    name: Anna
+    age: 10
+    likes:
+      - jump
+      - run
+    address:
+      city: guangzhou
+      country: Chinese
+
+
+
+
+
+
+
+
+
+    #name: test
+    # url: jdbc:mysql://129.204.112.205:3306/zhihu?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+
+    # 使用druid数据源
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+#    filters: stat
+#    maxActive: 20
+#    initialSize: 1
+#    maxWait: 60000
+#    minIdle: 1
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: select 'x'
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+
+#    maxOpenPreparedStatements: 20

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.Notes_in_labelMapper">
+    <select id="queryNotesRelationByUserId" resultType="com.demo.entities.Notes_in_label">
+        select * from notes_in_label where user_id=#{id}
+    </select>
+
+    <select id="queryNotesRelationByUserIdAndTimestamp" resultType="com.demo.entities.Notes_in_label">
+        select * from notes_in_label where user_id=#{userId} and time_stamp > #{timestamp}
+    </select>
+
+    <select id="maxTimeStampByUserId" resultType="java.sql.Timestamp">
+        select MAX(time_stamp) from notes_in_label where user_id=#{id}
+    </select>
+</mapper>
